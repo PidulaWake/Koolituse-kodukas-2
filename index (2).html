@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#295643">
+  <meta name="description" content="Veepealsed puhkemajad Saaremaal: hommikusöök, saun, SUP-lauad ja alpakad. Aktiivne perepuhkus Pidula Wakepargis. Broneeri otse!">
+  <title>Majutus Saaremaal | Pidula Wakepark ja Wake Inn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary:#295643; --color-primary-text:#fff; --color-secondary:#3D3B8A;
+      --color-accent:#EBD39F; --color-background:#F8F4EA; --color-surface:#fff;
+      --color-text:#202525; --color-text-muted:#4B5552; --color-border:#CFD5CB;
+      --font-heading:"Barlow Condensed",sans-serif; --font-body:"Poppins",sans-serif;
+      --radius-button:999px; --radius-card:24px; --radius-input:12px;
+      --container-max:1200px; --shadow-card:0 8px 24px rgba(32,37,37,.08);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--color-background);color:var(--color-text);font:400 16px/1.65 var(--font-body)}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--color-secondary);text-underline-offset:.18em}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    :focus-visible{outline:3px solid #3D3B8A;outline-offset:4px}
+    .container{width:min(calc(100% - 36px),var(--container-max));margin-inline:auto}
+    .skip{position:absolute;z-index:100;top:-70px;left:10px;background:#fff;color:#202525;padding:10px}
+    .skip:focus{top:10px}
+    h1,h2,h3{font-family:var(--font-heading);line-height:1.07;letter-spacing:.01em;margin:0 0 16px}
+    h1{font-size:clamp(38px,6vw,72px);font-weight:800}
+    h2{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+    h3{font-size:clamp(24px,2.6vw,32px);font-weight:700}
+    p{margin:0 0 18px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:var(--color-primary);margin-bottom:12px}
+    .muted{color:var(--color-text-muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:var(--radius-button);border:2px solid transparent;font-weight:700;text-align:center;text-decoration:none;transition:background .18s,transform .18s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--color-primary);color:#fff}
+    .btn-primary:hover{background:#1b4030}
+    .btn-outline{background:#fff;color:var(--color-secondary);border-color:var(--color-secondary)}
+    .btn-outline:hover{background:#eeeef8}
+    .btn-small{padding:9px 16px;min-height:43px}
+    .site-header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--color-border)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--color-primary);font-weight:700}
+    .brand img{width:62px;height:62px;object-fit:contain}
+    .nav-links{display:flex;align-items:center;gap:20px}
+    .nav-links>a:not(.btn){font-size:14px;font-weight:600;text-decoration:none;color:var(--color-text)}
+    .nav-links>a:hover{text-decoration:underline}
+    .menu-toggle{display:none;background:#fff;color:var(--color-primary);border:2px solid var(--color-primary);border-radius:12px;min-width:44px;min-height:44px}
+    .hero{padding:55px 0 75px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:clamp(24px,5vw,72px)}
+    .hero-copy{max-width:570px}
+    .hero-copy .intro{font-size:18px}
+    .hero-image{border-radius:32px;overflow:hidden;box-shadow:var(--shadow-card);background:#d8dfd3}
+    .hero-image img{width:100%;height:490px;object-fit:cover}
+    .hero-actions,.action-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .trust-row{display:flex;gap:12px 22px;flex-wrap:wrap;margin-top:24px;font-size:13px;font-weight:600;color:var(--color-primary)}
+    .section{padding:72px 0}
+    .section-light{background:#fff}
+    .section-sand{background:#f1e8d7}
+    .section-heading{max-width:760px;margin-bottom:30px}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .card{background:#fff;border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow-card);display:flex;flex-direction:column}
+    .card img{width:100%;height:220px;object-fit:cover;background:#d8dfd3}
+    .card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+    .card-body .btn{align-self:flex-start;margin-top:auto}
+    .price{font-size:22px;font-weight:700;color:var(--color-primary);margin-bottom:14px}
+    .feature-list{padding-left:22px;margin:0 0 24px}
+    .feature-list li{margin-bottom:5px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .split>img{width:100%;height:420px;object-fit:cover;border-radius:var(--radius-card)}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:30px 0}
+    .benefit{background:#fff;border:1px solid var(--color-border);border-radius:16px;padding:16px;font-weight:600;text-align:center}
+    .note{font-size:13px;color:var(--color-text-muted)}
+    .season-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .season{border-radius:20px;padding:25px;background:#fff;border:1px solid var(--color-border)}
+    .season h3{color:var(--color-primary)}
+    .quote-box{border:2px dashed #a7bba9;border-radius:20px;padding:28px;background:#fff}
+    details{border-bottom:1px solid var(--color-border);padding:18px 0}
+    details:first-of-type{border-top:1px solid var(--color-border)}
+    summary{cursor:pointer;font-weight:600;color:var(--color-primary);padding-right:20px}
+    details p{margin:12px 0 0}
+    .contact-box{background:var(--color-primary);color:#fff;border-radius:28px;padding:32px}
+    .contact-box a{color:#fff}
+    .contact-box .btn{color:var(--color-primary);background:#fff}
+    .site-footer{background:#1d372d;color:#fff;padding:42px 0 95px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
+    .site-footer a{color:#fff}
+    .footer-links{display:grid;gap:10px}
+    .sticky-mobile{display:none}
+    @media(max-width:950px){
+      .nav-links{gap:12px}.nav-links>a:not(.btn){font-size:12px}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.benefits{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:767px){
+      .site-header .nav-wrap{min-height:68px}.brand img{width:54px;height:54px}
+      .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;padding:18px;background:#fff;box-shadow:var(--shadow-card)}
+      .nav-links.is-open{display:flex}.nav-links>a{padding:7px 0}
+      .hero{padding:32px 0 50px}.hero-grid,.split{grid-template-columns:1fr;gap:25px}
+      .hero-image{order:-1}.hero-image img{height:270px}
+      .hero-copy .intro{font-size:16px}.section{padding:50px 0}
+      .grid,.season-grid,.footer-grid{grid-template-columns:1fr}
+      .split>img{height:270px}.card img{height:210px}
+      .sticky-mobile{display:block;position:fixed;bottom:0;left:0;right:0;z-index:40;padding:10px 16px max(10px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--color-border)}
+      .sticky-mobile .btn{width:100%}
+      .site-footer{padding-bottom:115px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LodgingBusiness",
+    "name":"Pidula Wakepark – Wake Inn by Pidu.L.A.",
+    "url":"https://saarewake.ee/et/",
+    "telephone":"+3725088969",
+    "email":"janet@saarewake.ee",
+    "address":{"@type":"PostalAddress","streetAddress":"Pidula kalakasvatus, Kallaste küla","addressLocality":"Saaremaa vald","postalCode":"93462","addressCountry":"EE"},
+    "description":"Saaremaa looderannikul asuv aastaringne majutus veepealsetes kuuekohalistes puhkemajades ning kogupere veespordi- ja vabaajakeskus.",
+    "amenityFeature":[
+      {"@type":"LocationFeatureSpecification","name":"Saun","value":true},
+      {"@type":"LocationFeatureSpecification","name":"Tasuta parkimine","value":true},
+      {"@type":"LocationFeatureSpecification","name":"WiFi","value":true}
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#sisu">Liigu põhisisu juurde</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#algus" aria-label="Pidula Wakepark – avalehele"><img src="logo.svg" alt="Pidula Wakepargi logo" width="62" height="62"><span>Pidula Wakepark</span></a>
+    <button class="menu-toggle" type="button" aria-label="Ava menüü" aria-controls="nav-links" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="nav-links" aria-label="Peamenüü">
+      <a href="#majutus">Majutus</a><a href="#tegevused">Tegevused</a><a href="#paketid">Paketid</a><a href="#meist">Meist</a><a href="#kkk">KKK</a><a href="#kontakt">Kontakt</a>
+      <a class="btn btn-primary btn-small" href="https://bouk.io/booking/pidulawakepark">Broneeri majutus</a>
+    </nav>
+  </div>
+</header>
+<main id="sisu">
+  <section class="hero" id="algus" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Wake Inn by Pidu.L.A. · Saaremaa</p>
+        <h1 id="hero-title">Majutus Saaremaal – seiklused päeval, oma maja vee kohal öösel</h1>
+        <p class="intro">Pidula Wakepargis saad veeta pere või sõpradega mitu mõnusat päeva. Ööbi hubases veepealses majas, naudi sauna ja hommikusööki ning vali iga päev uus seiklus.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="https://bouk.io/booking/pidulawakepark">Broneeri majutus</a><a class="btn btn-outline" href="#tegevused">Avasta tegevused</a></div>
+        <div class="trust-row"><span>✓ Kuni 6 inimest majas</span><span>✓ Hommikusöök hinnas</span><span>✓ Avatud aasta läbi</span></div>
+      </div>
+      <div class="hero-image"><img src="images/saunamaja-1.jpg" alt="Pidula Wake Inni veepealne puhkemaja Saaremaal" width="900" height="700" fetchpriority="high"></div>
+    </div>
+  </section>
+  <section class="section section-light" id="majutus" aria-labelledby="majutus-title">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">Sinu oma pesa vee kohal</p><h2 id="majutus-title">Wake Inn – mugav majutus kogu perele</h2><p>Meil on kümme kahekorruselist puhkemaja. Igas majas on kuni kuus magamiskohta, konditsioneer, põrandaküte, dušš ja WC. Pehmed padjad ootavad pärast tegusat päeva.</p></div>
+      <div class="split">
+        <img src="images/saunamaja-2.jpg" alt="Wake Inni puhkemaja ja veeäärne ümbrus" width="900" height="650" loading="lazy">
+        <div>
+          <p class="price">Alates 160 € / öö kahele</p>
+          <p>Lisakülaline +20 € öö kohta. Näiteks neljale inimesele 200 € öö.</p>
+          <h3>Majutuse hinnas</h3>
+          <ul class="feature-list"><li>Kontinentaalne hommikusöök</li><li>Sauna kasutamine</li><li>Voodipesu ja rätikud</li><li>SUP-laudade ja vesijalgrataste kasutus</li><li>Alpakade külastamine</li><li>Ööpäevaringne ujumisvõimalus</li></ul>
+          <p class="note">Majakestes on WiFi, kuid puudub köök ja omaette grillimisvõimalus. Veesõiduvahendite kasutamine sõltub hooajast ja oludest.</p>
+          <a class="btn btn-primary" href="https://bouk.io/booking/pidulawakepark">Vaata saadavust ja broneeri</a>
+        </div>
+      </div>
+      <div class="benefits"><div class="benefit">10 veepealset maja</div><div class="benefit">Kokku kuni 60 ööbijat</div><div class="benefit">Aastaringne majutus</div><div class="benefit">Tasuta parkimine</div></div>
+    </div>
+  </section>
+  <section class="section" id="tegevused" aria-labelledby="tegevused-title">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">Igaühele oma seiklus</p><h2 id="tegevused-title">Kõik mõnusaks perepuhkuseks ühes kohas</h2><p>Siin pole vaja küsida, mida täna teha. Pigem tuleb otsustada, millest alustada.</p></div>
+      <div class="grid">
+        <article class="card"><img src="images/rand.jpg" alt="Pidula Wakepargi veeäärne rand" width="650" height="450" loading="lazy"><div class="card-body"><h3>Wakepark ja Funpark</h3><p>Wakeboard nii algajale kui ka oskajale, lisaks lustlik veepark.</p><p class="price">Wake alates 25 € · Funpark 12 €/päev</p><a class="btn btn-outline btn-small" href="#kontakt">Küsi tegevuste kohta</a></div></article>
+        <article class="card"><img src="images/saun.jpg" alt="Saun Pidula Wakepargis" width="650" height="450" loading="lazy"><div class="card-body"><h3>Saun ja ujumine</h3><p>Vahelduseks seiklustele võta aeg maha. Majutujale on saun hinna sees.</p><p class="price">Majutujale hinnas</p><a class="btn btn-outline btn-small" href="#majutus">Vaata majutust</a></div></article>
+        <article class="card"><img src="images/hommikusook.jpg" alt="Pidula Wake Inni majutuse juurde kuuluv hommikusöök" width="650" height="450" loading="lazy"><div class="card-body"><h3>Hommikusöök ja kohvik</h3><p>Alusta päeva kontinentaalse hommikusöögiga. Kohapeal on ka kohvik ja baar.</p><p class="price">Hommikusöök majutujale hinnas</p><a class="btn btn-outline btn-small" href="#kkk">Vaata praktilist infot</a></div></article>
+        <article class="card"><div class="card-body"><h3>SUP ja vesijalgrattad</h3><p>Rahulik tiir vee peal? Majutujale on kasutus tasuta.</p><p class="price">10 € / tund · majutujale tasuta</p><a class="btn btn-outline btn-small" href="#kontakt">Küsi lisainfot</a></div></article>
+        <article class="card"><div class="card-body"><h3>Elektriliste ATV-de safari</h3><p>Avasta Pidula ümbrust elektriliste ATV-dega.</p><p class="price">65 € / tund / ATV</p><a class="btn btn-outline btn-small" href="#kontakt">Küsi safarit</a></div></article>
+        <article class="card"><div class="card-body"><h3>Alpakad</h3><p>Tule tervita meie uudishimulikke ja karvaseid naabreid.</p><p class="price">Külastus tasuta · söötmine 8 €/in</p><a class="btn btn-outline btn-small" href="#kontakt">Küsi lisainfot</a></div></article>
+      </div>
+    </div>
+  </section>
+  <section class="section section-sand" id="paketid" aria-labelledby="paketid-title"><div class="container">
+    <div class="section-heading"><p class="eyebrow">Tule oma inimestega</p><h2 id="paketid-title">Seltskonnad, suvepäevad ja erilised sündmused</h2><p>Pidulas saad ühes kohas majutuse, tegevused, sauna ja toitlustuse. Kümnes majas on ruumi kuni 60 ööbijale. Suviste grupipakettide kõrval pakume ka sügis- ja talvehooaja elamusi.</p></div>
+    <div class="grid">
+      <article class="card"><div class="card-body"><h3>Päev Pidu.L.A-s</h3><p class="price">69 € / inimene</p><p>Wakepark 4 tundi koos varustusega, saun, ühine ala ja toitlustus.</p><a class="btn btn-primary btn-small" href="mailto:janet@saarewake.ee?subject=Paring%3A%20Paev%20Pidu.L.A-s">Küsi pakkumist</a></div></article>
+      <article class="card"><div class="card-body"><h3>Ööbimisega Pidu.L.A-s</h3><p class="price">129 € / inimene</p><p>Päevapaketi tegevused, majutus, toitlustus ja hommikusöök.</p><a class="btn btn-primary btn-small" href="mailto:janet@saarewake.ee?subject=Paring%3A%20Oobimisega%20Pidu.L.A-s">Küsi pakkumist</a></div></article>
+      <article class="card"><div class="card-body"><h3>Kõik hinnas Pidu.L.A-s</h3><p class="price">169 € / inimene</p><p>Wake, saun, majutus, toitlustus, hommikusöök ja joogid. Programm kokkuleppel.</p><a class="btn btn-primary btn-small" href="mailto:janet@saarewake.ee?subject=Paring%3A%20Koik%20hinnas%20Pidu.L.A-s">Küsi pakkumist</a></div></article>
+    </div>
+    <p class="note" style="margin-top:20px">Grupipaketid ja tingimused sõltuvad hooajast ning kokkuleppest. Küsi ka personaalset pakkumist pulmadeks, sünnipäevaks või ettevõtte ürituseks.</p>
+  </div></section>
+  <section class="section" id="hooajad"><div class="container"><div class="section-heading"><p class="eyebrow">Pidula ei maga talveund</p><h2>Puhkus Saaremaal aasta ringi</h2></div><div class="season-grid"><article class="season"><h3>Suvi</h3><p>Wakeboard, Funpark, rand, SUP, vesijalgrattad ja pikad õhtud vee ääres.</p></article><article class="season"><h3>Kevad ja sügis</h3><p>Klassiekskursioonid, tiimiüritused, rahulik looduspuhkus ja ATV-elamused.</p></article><article class="season"><h3>Talv</h3><p>Saun, taliujumine ja uisutamine. Wake Inni majad on soojad ja kasutatavad aasta läbi.</p></article></div></div></section>
+  <section class="section section-light" id="meist"><div class="container split"><div><p class="eyebrow">Pereettevõte suure südamega</p><h2>Rõõmu ja lusti kodu Saaremaa looduses</h2><p>Pidula Wakepark on pereettevõttena tegutsev veespordi- ja vabaajakeskus. Tahame, et igal pereliikmel oleks siin midagi teha – ja et pärast tegusat päeva oleks kõigil hea puhata.</p><p>Keskkonnahoid on meile oluline. Kasutame oma päikeseenergiat ja akupanku ning pakume ka elektriliste ATV-de safarit.</p><p>Meie pikem sünnilugu on veel kirja panemisel. Seni räägivad meie eest eelkõige koht ja elamused.</p></div><img src="images/rand.jpg" alt="Pidula Wakepargi looduslähedane rand ja puhkeala" width="900" height="650" loading="lazy"></div></section>
+  <section class="section" id="arvustused"><div class="container"><div class="section-heading"><p class="eyebrow">Külaliste kogemused</p><h2>Mida meie külalised räägivad?</h2></div><div class="quote-box"><p>Siia saab lisada ehtsad külaliste arvustused, kui nende tekstid ja avaldamise luba on olemas.</p><p class="note">[TÄIDA: 2–3 kontrollitud arvustust koos allika ja avaldamisloaga.]</p></div></div></section>
+  <section class="section section-light" id="kkk"><div class="container"><div class="section-heading"><p class="eyebrow">Hea teada</p><h2>Korduma kippuvad küsimused</h2></div>
+    <details><summary>Millal saab majakesse sisse registreerida?</summary><p>Alates kell 15.00. Võimalusel anname maja üle varem. Parki võid tulla juba enne seda.</p></details>
+    <details><summary>Kas hommikusöök ja rätikud on hinnas?</summary><p>Jah, kontinentaalne hommikusöök, voodipesu ja rätikud kuuluvad majutuse hinna sisse.</p></details>
+    <details><summary>Kas majakeses on köök ja WiFi?</summary><p>WiFi on olemas, kuid majakeses ei ole kööki ega eraldi grillimisvõimalust. Kohapeal on kohvik ja baar, mille lahtiolekuajad sõltuvad hooajast.</p></details>
+    <details><summary>Kas SUP ja vesijalgrattad on majutujale tasuta?</summary><p>Jah. Nende kasutamine kuulub majutuse hinna sisse, arvestades hooajalist saadavust ja olusid.</p></details>
+    <details><summary>Kas alpakade külastamine maksab?</summary><p>Alpakade vaatamine on tasuta. Söötmine maksab 8 € inimese kohta.</p></details>
+    <details><summary>Kas saab tulla ka talvel?</summary><p>Jah. Wake Inni majutus on avatud aastaringselt. Talvel on võimalik nautida sauna, taliujumist ja uisutamist vastavalt tingimustele.</p></details>
+    <details><summary>Kas majutus sobib ratastooliga külalisele?</summary><p>Ratastooliga ligipääs on praegu piiratud. Enne broneerimist palume oma vajadustest teada anda, et saaksime täpsustada reaalseid võimalusi.</p></details>
+  </div></section>
+  <section class="section" id="asukoht"><div class="container split"><div><p class="eyebrow">Leia meid üles</p><h2>Saaremaa looderannik ootab</h2><p><strong>Aadress:</strong> Pidula kalakasvatus, Kallaste küla, Saaremaa vald, 93462 Saare maakond.</p><p>Parkimine on tasuta. Kohapeal on kaks VOOLi opereeritavat elektriautode laadijat. Kohale juhatavad Google Maps ja Waze.</p><div class="action-row"><a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Pidula%20Wakepark%20Saaremaa" target="_blank" rel="noopener noreferrer">Ava Google Maps</a><a class="btn btn-outline" href="https://www.waze.com/ul?q=Pidula%20Wakepark%20Saaremaa" target="_blank" rel="noopener noreferrer">Ava Waze</a></div><p class="note" style="margin-top:20px">[TÄIDA: täpsed ühistranspordi juhised ja laadimistingimused.]</p></div><img src="images/rand.jpg" alt="Pidula Wakepargi rand Saaremaa looderannikul" width="900" height="650" loading="lazy"></div></section>
+  <section class="section section-light" id="kontakt"><div class="container"><div class="contact-box"><p class="eyebrow" style="color:#EBD39F">Võta ühendust</p><h2>Järgmine mõnus puhkus algab Pidulast</h2><p>Majutuse saad broneerida otse. Suurema seltskonna, sünnipäeva või ettevõtte ürituse puhul kirjuta meile – aitame sobiva lahenduse kokku panna.</p><p><strong>Telefon:</strong> <a href="tel:+3725088969">+372 5088969</a><br><strong>E-post:</strong> <a href="mailto:janet@saarewake.ee">janet@saarewake.ee</a></p><div class="action-row"><a class="btn" href="https://bouk.io/booking/pidulawakepark">Broneeri majutus</a><a class="btn btn-outline" href="mailto:janet@saarewake.ee?subject=Pidula%20Wakepark%20-%20grupiparing">Küsi grupipakkumist</a></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><h3>Pidula Wakepark</h3><p>Perepuhkus, veesport ja Wake Inni veepealsed puhkemajad Saaremaal.</p><p>Pidula kalakasvatus, Kallaste küla, Saaremaa vald, 93462</p></div><div><h3>Leia kiirelt</h3><div class="footer-links"><a href="#majutus">Majutus</a><a href="#tegevused">Tegevused</a><a href="#paketid">Grupipaketid</a><a href="#kkk">KKK</a></div></div><div><h3>Kontakt ja tingimused</h3><div class="footer-links"><a href="tel:+3725088969">+372 5088969</a><a href="mailto:janet@saarewake.ee">janet@saarewake.ee</a><a href="/andmekaitse.html">Andmekaitsetingimused</a><a href="#kontakt">Broneerimise küsimused</a></div></div></div><div class="container"><p class="note" style="color:#e4e9e2;margin-top:30px">© <span id="year">2026</span> Pidula Wakepark. Mõnusat puhkust!</p></div></footer>
+<div class="sticky-mobile"><a class="btn btn-primary" href="https://bouk.io/booking/pidulawakepark">Broneeri majutus</a></div>
+<script>
+  const toggle=document.querySelector('.menu-toggle');
+  const nav=document.querySelector('#nav-links');
+  toggle.addEventListener('click',()=>{
+    const open=toggle.getAttribute('aria-expanded')==='true';
+    toggle.setAttribute('aria-expanded',String(!open));
+    toggle.setAttribute('aria-label',open?'Ava menüü':'Sulge menüü');
+    nav.classList.toggle('is-open',!open);
+  });
+  nav.addEventListener('click',event=>{
+    if(event.target.closest('a')){
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Ava menüü');
+    }
+  });
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
